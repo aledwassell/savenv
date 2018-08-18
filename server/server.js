@@ -31,10 +31,39 @@ router.route('/api').post((req, res) => {
         });
 });
 
+let insertDocs = (db, callback) => {
+    let collection = db.collection('documents');
+    collection.insertMany([
+            {a:1}, {a:2}, {a:3},
+        ],
+        (err, res) => {
+            assert.equal(err, null);
+            assert.equal(3, res.result.n);
+            assert.equal(3, res.ops.length);
+            console.log('Added 3 items to the collection');
+            callback(res);
+        })
+}
+
+let findDocs  = (db, callback) => {
+    "use strict";
+    let collection = db.collection('documents');
+    collection.find({}).toArray((err, docs) => {
+        assert.equal(err, null);
+        console.log("Found the following records inside this collection");
+        console.log(docs);
+        callback(docs);
+    });
+}
+
 MongoClient.connect(url, (err, db) => {
     assert.equal(null, err);
     console.log('Connected to server successfully');
-    db.close();
+    insertDocs(db, () => {
+        findDocs(db, () => {
+            db.close();
+        })
+    });
 })
 
 app.use('/', router);

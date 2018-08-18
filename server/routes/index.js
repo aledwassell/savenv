@@ -3,14 +3,15 @@ let express = require('express'),
     app = express(),
     mongoDB = require('mongodb');
 
+let MongoClient = mongoDB.MongoClient;
+const url = 'mongodb://localhost:27017/sandbox';
+
 router.get('/', (req, res, next) => {
     res.render('index', {title: 'Express app'});
 });
 
 router.route('/data')
     .get((req, res, next) => {
-        let MongoClient = mongoDB.MongoClient;
-        const url = 'mongodb://localhost:27017/sandbox';
         MongoClient.connect(url, (err, db) => {
             if (err) {
                 console.log('There was an error on the server ', err)
@@ -31,7 +32,23 @@ router.route('/data')
     })
     .post((req, res, next) => {
         console.log(req.body)
-        let MongoClient = mongoDB.MongoClient;
-        const url = 'mongodb://localhost:27017/sandbox';
+        MongoClient.connect(url, (err, db) => {
+            if(err) {
+                console.log('There was an error ', err)
+            } else {
+                console.log('Connected to the server for POST')
+                let collection = db.collection('documents')
+                collection.insertOne(req.body, (err, result) => {
+                    console.log(result);
+                    if(err) {
+                        console.log('There was an error ', err)
+                    } else {
+                        res.send(req.body.id);
+                    }
+                    db.close();
+                })
+            }
+        })
+
     })
 module.exports = router;

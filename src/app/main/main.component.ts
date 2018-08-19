@@ -20,8 +20,7 @@ export class MainComponent implements OnInit {
     onSubmit(): void {
         this.service.sendData(this.dataForm.value)
             .subscribe((d) => {
-                console.log(d)
-                this.data.push({this.dataForm.value});
+                this.data.push(d);
                 this.dataForm.reset();
             })
     }
@@ -30,8 +29,10 @@ export class MainComponent implements OnInit {
             .subscribe(d => this.data = d);
     }
 
-    remove(id): void {
-        this.service.delete()
+    remove(id: string): void {
+        this.data = this.data.filter(d => d._id !== id);
+        this.service.delete(id)
+            .subscribe()
     }
 
     ngOnInit() {

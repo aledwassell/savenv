@@ -34,6 +34,15 @@ export class ServerConnectorService {
             )
     }
 
+    delete(id: string): Observable<string> {
+        let url = `${this.url}/${id}`;
+        return this.http.delete<string>(url)
+            .pipe(
+                tap(_ => console.log('Deleted')),
+                catchError(this.handleError<any>('Delete rejected'))
+            )
+    }
+
     private handleError<T>(operation = 'operation', result?: T) {
         return (error: any): Observable<T> => {
 

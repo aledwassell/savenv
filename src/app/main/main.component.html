@@ -2,7 +2,7 @@
     <ul>
         <li *ngFor="let item of data">
             {{item.type}}: {{item.amount}}: {{item.id}}
-            <button (ngClick)="remove(item.id)">Delete</button>
+            <button (click)="remove(item._id)">Delete</button>
         </li>
     </ul>
 </div>

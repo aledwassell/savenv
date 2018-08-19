@@ -31,7 +31,6 @@ router.route('/data')
         });
     })
     .post((req, res, next) => {
-        console.log(req.body)
         MongoClient.connect(url, (err, db) => {
             if(err) {
                 console.log('There was an error ', err)
@@ -39,11 +38,11 @@ router.route('/data')
                 console.log('Connected to the server for POST')
                 let collection = db.collection('documents')
                 collection.insertOne(req.body, (err, result) => {
-                    console.log(result);
+                    console.log(result.ops);
                     if(err) {
                         console.log('There was an error ', err)
                     } else {
-                        res.send(req.body.id);
+                        res.send(result.ops[0]._id);
                     }
                     db.close();
                 })

@@ -1,7 +1,21 @@
 <div>
     <ul>
         <li *ngFor="let item of data">
-            {{item.type}}: {{item.amount}}
+            {{item.type}}: {{item.amount}}: {{item.id}}
+            <button (ngClick)="remove(item.id)">Delete</button>
         </li>
     </ul>
+</div>
+<div>
+    <form [formGroup]="dataForm" (ngSubmit)="onSubmit()">
+        <label>
+            Type:
+            <input type="text" formControlName="type">
+        </label>
+        <label>
+            Amount:
+            <input type="text" formControlName="amount">
+        </label>
+        <button type="submit" [disabled]="dataForm.invalid">Submit</button>
+    </form>
 </div>

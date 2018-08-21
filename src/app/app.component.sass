@@ -1,0 +1,13 @@
+.wrapper
+  display: grid
+  min-height: 100%
+  grid-gap: 20px
+  grid-template-areas: ". nav ." ". body ." ". footer ."
+  grid-template-columns: auto minmax(auto, 1200px) auto
+  grid-template-rows: auto 1fr auto
+  .navigation
+    grid-area: nav
+  .body
+    grid-area: body
+  .footer
+    grid-area: footer

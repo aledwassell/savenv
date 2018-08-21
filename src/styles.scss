@@ -1,28 +1,8 @@
 @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+@import "assets/custom-theme.scss";
 
-body{
+html, body{
 	margin: 0;
-}
-
-.content{
-	display: grid;
-	grid-template-columns: 1fr;
-	grid-template-rows: 64px 1fr 100px;
-	grid-template-areas:
-					"header"
-					"main"
-					"footer";
-	app-navigation{
-		grid-area: header;
-	}
-	app-main{
-		grid-area: main;
-		height: 100%;
-	}
-	app-footer{
-		grid-area: footer;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-	}
+	width: 100%;
+	height: 100%;
 }

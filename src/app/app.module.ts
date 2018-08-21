@@ -9,12 +9,6 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatMenuModule, MatButtonModule, MatCheckboxModule, MatToolbarModule, MatIconModule, MatFormFieldModule, MatInputModule} from '@angular/material';
 import { MainComponent } from './main/main.component';
 import { FooterComponent } from './footer/footer.component';
-import {RouterModule, Routes} from "@angular/router";
-
-const appRoutes: Routes = [
-    { path: 'crisis-center', component: CrisisListComponent },
-    { path: 'heroes', component: HeroListComponent },
-];
 
 @NgModule({
     declarations: [
@@ -27,10 +21,6 @@ const appRoutes: Routes = [
         BrowserModule,
         BrowserAnimationsModule,
         ReactiveFormsModule,
-        RouterModule.forRoot(
-            appRoutes,
-            {enableTracing: true}
-        ),
         MatMenuModule,
         HttpClientModule,
         MatButtonModule,

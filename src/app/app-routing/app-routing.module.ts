@@ -3,6 +3,7 @@ import {RouterModule, Routes} from "@angular/router";
 import {MainComponent} from "../main/main.component";
 
 const appRoutes: Routes = [
+    {path: '', redirectTo: 'home', pathMatch: 'full'},
     {path: 'home', component: MainComponent}
 ]
 
@@ -15,8 +16,7 @@ const appRoutes: Routes = [
     ],
     exports: [
         RouterModule
-    ],
-    declarations: []
+    ]
 })
 export class AppRoutingModule {
 }

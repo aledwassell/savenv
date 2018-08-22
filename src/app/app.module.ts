@@ -6,6 +6,7 @@ import { ReactiveFormsModule} from "@angular/forms";
 import {AppComponent} from './app.component';
 import {NavigationComponent} from './navigation/navigation.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { AppRoutingModule } from "./app-routing/app-routing.module";
 import {MatMenuModule, MatButtonModule, MatCheckboxModule, MatToolbarModule, MatIconModule, MatFormFieldModule, MatInputModule} from '@angular/material';
 import { MainComponent } from './main/main.component';
 import { FooterComponent } from './footer/footer.component';
@@ -21,6 +22,7 @@ import { FooterComponent } from './footer/footer.component';
         BrowserModule,
         BrowserAnimationsModule,
         ReactiveFormsModule,
+        AppRoutingModule,
         MatMenuModule,
         HttpClientModule,
         MatButtonModule,

@@ -1,8 +1,12 @@
 @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
-@import "assets/custom-theme.scss";
+@import "custom-theme";
 
 html, body{
 	margin: 0;
 	width: 100%;
 	height: 100%;
+}
+
+*{
+	font-family: 'EB Garamond', serif;
 }

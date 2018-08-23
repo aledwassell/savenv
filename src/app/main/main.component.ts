@@ -6,7 +6,7 @@ import {FormControl, FormGroup} from "@angular/forms";
 @Component({
     selector: 'app-main',
     templateUrl: './main.component.html',
-    styleUrls: ['./main.component.css']
+    styleUrls: ['./main.component.sass']
 })
 export class MainComponent implements OnInit {
     data: Data[];
@@ -14,6 +14,16 @@ export class MainComponent implements OnInit {
         type: new FormControl(''),
         amount: new FormControl('')
     });
+    write: string;
+    public writeString = () => {
+        let sentence: string = 'clean and carbon neutral world';
+        setInterval(() => {
+            for (let i = 0; i < sentence.length; i++) {
+                this.write = this.write + sentence[i];
+            }
+        }, 600);
+    }
+
     constructor(private service: ServerConnectorService) {
     }
 
@@ -24,6 +34,7 @@ export class MainComponent implements OnInit {
                 this.dataForm.reset();
             })
     }
+
     getData(): void {
         this.service.getData()
             .subscribe(d => this.data = d);
@@ -37,6 +48,7 @@ export class MainComponent implements OnInit {
 
     ngOnInit() {
         this.getData();
+        this.writeString();
     }
 
 }

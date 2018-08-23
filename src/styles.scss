@@ -1,5 +1,6 @@
 @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
 @import "custom-theme";
+@import "assets/fonts/stylesheet.css";
 
 html, body{
 	margin: 0;
@@ -8,5 +9,10 @@ html, body{
 }
 
 *{
-	font-family: 'EB Garamond', serif;
+	font-family: 'Futura-Book', sans-serif;
+	color: #444444;
+}
+
+h1, h2, h3, h4, h5, h6{
+	font-family: 'Canela', serif;
 }

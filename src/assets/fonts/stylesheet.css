@@ -1,0 +1,16 @@
+@font-face {
+    font-family: 'Futura-Book';
+    src: url('ShellFuturaW15-Book.woff2') format('woff2'),
+        url('ShellFuturaW15-Book.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Canela';
+    src: url('Canela-Bold.woff2') format('woff2'),
+        url('Canela-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+

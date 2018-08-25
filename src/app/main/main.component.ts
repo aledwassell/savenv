@@ -14,22 +14,6 @@ export class MainComponent implements OnInit {
         type: new FormControl(''),
         amount: new FormControl('')
     });
-    write: string = '';
-    public writeString = () => {
-        let sentence: string = 'clean and carbon neutral ';
-        let count = 0;
-        let timeOut = () => {
-            setTimeout(() => {
-                this.write = this.write + sentence.charAt(count);
-                console.log(this.write);
-                count = count + 1;
-                timeOut();
-            }, 80)
-        };
-        setTimeout(() => {
-            timeOut();
-        }, 2000);
-    };
 
     constructor(private service: ServerConnectorService) {}
 
@@ -54,7 +38,6 @@ export class MainComponent implements OnInit {
 
     ngOnInit() {
         this.getData();
-        this.writeString();
     }
 
 }

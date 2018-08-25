@@ -9,8 +9,16 @@
 @font-face {
     font-family: 'Canela';
     src: url('Canela-Bold.woff2') format('woff2'),
-        url('Canela-Bold.woff') format('woff');
+    url('Canela-Bold.woff') format('woff');
     font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Born-Ready';
+    src: url('Born-Ready.woff2') format('woff2'),
+    url('Born-Ready.woff2') format('woff');
+    font-weight: 100;
     font-style: normal;
 }
 

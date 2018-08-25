@@ -10,13 +10,15 @@ import { AppRoutingModule } from "./app-routing/app-routing.module";
 import {MatMenuModule, MatButtonModule, MatCheckboxModule, MatToolbarModule, MatIconModule, MatFormFieldModule, MatInputModule} from '@angular/material';
 import { MainComponent } from './main/main.component';
 import { FooterComponent } from './footer/footer.component';
+import { MessageBannerComponent } from './message-banner/message-banner.component';
 
 @NgModule({
     declarations: [
         AppComponent,
         NavigationComponent,
         MainComponent,
-        FooterComponent
+        FooterComponent,
+        MessageBannerComponent
     ],
     imports: [
         BrowserModule,

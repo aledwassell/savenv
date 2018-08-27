@@ -11,6 +11,7 @@ import {MatMenuModule, MatButtonModule, MatCheckboxModule, MatToolbarModule, Mat
 import { MainComponent } from './main/main.component';
 import { FooterComponent } from './footer/footer.component';
 import { MessageBannerComponent } from './message-banner/message-banner.component';
+import { LineBuilderComponent } from './line-builder/line-builder.component';
 
 @NgModule({
     declarations: [
@@ -18,7 +19,8 @@ import { MessageBannerComponent } from './message-banner/message-banner.componen
         NavigationComponent,
         MainComponent,
         FooterComponent,
-        MessageBannerComponent
+        MessageBannerComponent,
+        LineBuilderComponent
     ],
     imports: [
         BrowserModule,

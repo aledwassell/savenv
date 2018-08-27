@@ -1,0 +1,7 @@
+<div class="box">
+  <ul>
+    <li *ngFor="let a of data" (mouseenter)="colourChanger($event)" (mouseleave)="colourChanger($event)">
+      <div style="display: inline;" *ngFor="let b of a">{{b}}</div>
+    </li>
+  </ul>
+</div>

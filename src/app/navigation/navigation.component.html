@@ -1,4 +1,8 @@
 <nav class="nav">
-    <a href="/" class="active"><span>Home</span></a>
-    <a href="/" title="What we do"><span>comparison</span></a>
+    <a href=""
+       *ngFor="let n of navs"
+       (mouseenter)="boxAction($event)"
+       (mouseleave)="boxAction($event)">
+        {{n}}
+    </a>
 </nav>

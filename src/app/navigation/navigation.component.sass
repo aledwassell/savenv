@@ -7,13 +7,19 @@ nav
   align-items: center
   transition: all .5s
   a
-    width: 50px
-    height: 30px
+    width: auto
+    height: auto
     position: relative
+    display: flex
+    margin: 0 0 0 10px
+    padding: 0
+    align-items: center
     z-index: 1
     text-decoration: none
     color: #555
     transition: color 0.5s
+    &:hover
+      color: #ffffff
     &:after
       display: block
       position: absolute
@@ -24,15 +30,14 @@ nav
       margin: auto
       width: 100%
       content: '.'
-      height: 1px
+      height: 0
+      transition: height 0.3s
       color: transparent
-      background: #F1C40F
+      background: #000000
       visibility: none
       opacity: 0
       z-index: -1
-    &:hover
-      color: #fff
-      &:after
+    &:hover:after
         opacity: 1
         visibility: visible
         height: 100%

@@ -6,21 +6,19 @@ import {Component, OnInit} from '@angular/core';
     styleUrls: ['./message-banner.component.sass']
 })
 export class MessageBannerComponent implements OnInit {
+    exclamation: boolean = false;
     write: string = '';
     public writeString = () => {
         let sentence: string = 'Carbon Neutral ';
-        let count = 0;
+        let count: number = 0;
         let timeOut = () => {
             setTimeout(() => {
                 this.write = this.write + sentence.charAt(count);
-                console.log(this.write);
                 count = count + 1;
-                timeOut();
-            }, 80)
+                count === sentence.length ? this.exclamation = true : timeOut();
+            }, 80);
         };
-        setTimeout(() => {
-            timeOut();
-        }, 2000);
+        timeOut();
     };
 
     constructor() {
